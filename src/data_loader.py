@@ -57,7 +57,7 @@ def upload_and_validate(dataset_name, validation_func):
             filename = list(uploaded.keys())[0]
             file_content = io.BytesIO(uploaded[filename])
         else:
-            path = input(f"   (Local) Enter path for {dataset_name} (or Press Enter to Skip): ").strip()
+            path = input(f"   (Local) Enter path for {dataset_name} ...: ").strip().replace('"', '')
             if not path:
                 print(f"    Skipping {dataset_name}...")
                 return None
